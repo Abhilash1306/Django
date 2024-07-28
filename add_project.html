@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Project</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'program5/styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>Add Project</h1>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+        </div>
+        <button type="submit">Save</button>
+    </form>
+</div>
+</body>
+</html>

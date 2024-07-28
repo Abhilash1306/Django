@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'program5/styles.css' %}">
+</head>
+<body>
+<div class="container">
+    <h1>Project List</h1>
+    <ul>
+        {% for project in projects %}
+        <li>{{ project.student.first_name }} {{project.student.last_name }}: {{ project.topic }} - {{ project.languages_used}} ({{ project.duration }} weeks)</li>
+        {% endfor %}
+    </ul>
+</div>
+</body>
+</html>

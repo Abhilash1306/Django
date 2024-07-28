@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'program5/styles.css' %}">
+</head>
+<body>
+<div class="container">
+<h1>Student List</h1>
+<a href="{% url 'export_students_csv' %}">Export as CSV</a> |
+<a href="{% url 'export_students_pdf' %}">Export as PDF</a>
+<ul>
+{% for student in students %}
+<li><a href="{% url 'student_detail' student.pk %}">{{student.first_name }} {{ student.last_name }}</a></li>
+{% endfor %}
+</ul>
+</div>
+</body>
+</html>

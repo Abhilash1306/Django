@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Enrollment List</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'program5/styles.css' %}">
+</head>
+<body>
+    <div class="container">
+    <h1>Enrollment List</h1>
+        <ul>
+        {% for enrollment in enrollments %}
+        <li>{{ enrollment.student.first_name }} {{enrollment.student.last_name }}: {{ enrollment.course.name }}</li>
+        {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
